@@ -2,7 +2,7 @@
 
 ```sqrt(x) := y : >= 0, y * y = x```
 
-Die Wurzel aus x wird definiert als eine Zahl y, für die gilt, dass y größer oder gleich null ist und y * y gleich x ergibt. Mathematisch ist das vollkommen richtig. Allerdings für Computerfunktionen wenig hilfreich, weil ich nicht angegeben habe, wie ich zum Ergebnis komme.
+Die Wurzel aus x wird definiert als eine Zahl y, für die gilt, dass y größer oder gleich null ist und y * y gleich x ergibt. Mathematisch ist das vollkommen richtig. Allerdings für Computerfunktionen wenig hilfreich, weil ich nicht angegeben habe, wie ich zum Ergebnis kommen.
 
 Wie komme ich zur Wurzel? :
 ### Das Newtonsche Iterationsverfahren
@@ -33,3 +33,12 @@ n! = 1 * 2 * 3 * ... * n =
 
 Um die Fakultät einer Zahl zu finden, multipliziere diese Zahl mit der Fakultät der vorherigen Zahl. Beispiel: Um die Zahl von Fakultät 6 also 6! zu ermittelt multipliziert man 6 mit 120 (also der Fakultät von 5) = 720. 
 => n! = n * (n - 1)!
+
+## Tree Recursion
+Beim errechnen von Fibonacci Zahlen ist die Tree Recursion eine schlechte Idee, denn sie benötigt viel zu viele redundante Berechnungen.
+Die Anzahl an benötigten Schritten steigt exponentiell mit der Anzahl n. Der nötige Platzbedarf steigt aber nur linear mit der Anzahl n, 
+denn man benötigt nur die Verzweigungen direkt darüber in die nächste Berechnung mit einfließen lassen
+Tree Recursion ist aber nicht generell nutzlos. Zum Einsatz kommt sie bei hierarchisch strukuturierten Daten. Bei Zahlen hingegen ehr weniger.
+Die Beobachtung, dass ein tree-recursiver Prozess sehr ineffizient aber im Vergleich zu iterativen Prozessen viel leichter zu verstehen ist,
+hat uns dazu veranlasst das Beste aus beiden Welten zusammenbringt, indem man "intelligente Compiler" entwift, die tree-recursive Funktionen in 
+effizientere Funktionen umwandeln können. 
